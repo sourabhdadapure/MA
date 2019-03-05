@@ -8,6 +8,7 @@ import { connect } from 'react-redux'
 import { getStockPrice, getEarnings } from '../modules/stocks'
 
 const Wrapper = styled.View`
+	margin-vertical: 25;
 	align-self: center;
 	width: 90%;
 `

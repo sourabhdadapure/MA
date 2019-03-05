@@ -7,11 +7,16 @@ import configureStore from './config/configureStore'
 
 const store = configureStore()
 
-const AppStack = createStackNavigator({
-	Splash: { screen: Splash },
-	LogIn: { screen: LogIn },
-	Earnings: { screen: Earnings },
-})
+const AppStack = createStackNavigator(
+	{
+		Splash: { screen: Splash },
+		LogIn: { screen: LogIn },
+		Earnings: { screen: Earnings },
+	},
+	{
+		cardStyle: { backgroundColor: '#001735' },
+	}
+)
 
 const App = createAppContainer(AppStack)
 
