@@ -1,48 +1,31 @@
 import React from 'react'
-import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
 import { EarningsCard } from '../../components'
 
-const Wrapper = styled.View`
-	margin-top: 30;
-	background-color: rgba(34, 43, 84, 0.9);
-	margin-horizontal: 5%;
-	align-items: center;
-	padding-vertical: 30;
-	justify-content: space-between;
-	flex-direction: column;
-	padding-horizontal: 5%;
-`
-
 class EarningsComponent extends React.Component {
+	static propTypes = {
+		earnings: PropTypes.object.isRequired,
+		symbol: PropTypes.string.isRequired,
+	}
+
 	render() {
-		const { symbol } = this.props
-		const {
-			actualEPS,
-			consensusEPS,
-			announceTime,
-			numberOfEstimates,
-			EPSSurpriseDollar,
-			EPSReportDate,
-			fiscalPeriod,
-			fiscalEndDate,
-			yearAgo,
-			yearAgoChangePercent,
-		} = this.props.earnings
+		const { symbol, earnings } = this.props
+
 		return (
 			<EarningsCard
 				symbol={symbol}
-				actualEPS={actualEPS}
-				consensusEPS={consensusEPS}
-				announceTime={announceTime}
-				numberOfEstimates={numberOfEstimates}
-				EPSSurpriseDollar={EPSSurpriseDollar}
-				EPSReportDate={EPSReportDate}
-				fiscalPeriod={fiscalPeriod}
-				fiscalEndDate={fiscalEndDate}
-				yearAgo={yearAgo}
-				yearAgoChangePercent={yearAgoChangePercent}
+				actualEPS={earnings.actualEPS}
+				consensusEPS={earnings.consensusEPS}
+				announceTime={earnings.announceTime}
+				numberOfEstimates={earnings.numberOfEstimates}
+				EPSSurpriseDollar={earnings.EPSSurpriseDollar}
+				EPSReportDate={earnings.EPSReportDate}
+				fiscalPeriod={earnings.fiscalPeriod}
+				fiscalEndDate={earnings.fiscalEndDate}
+				yearAgo={earnings.yearAgo}
+				yearAgoChangePercent={earnings.yearAgoChangePercent}
 			/>
 		)
 	}
