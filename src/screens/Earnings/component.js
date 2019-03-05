@@ -2,7 +2,7 @@ import React from 'react'
 import PropTypes from 'prop-types'
 
 import { connect } from 'react-redux'
-import { EarningsCard } from '../../components'
+import { EarningsCard, LoadingIndicator } from '../../components'
 
 class EarningsComponent extends React.Component {
 	static propTypes = {
@@ -27,7 +27,9 @@ class EarningsComponent extends React.Component {
 				yearAgo={earnings.yearAgo}
 				yearAgoChangePercent={earnings.yearAgoChangePercent}
 			/>
-		) : null
+		) : (
+			<LoadingIndicator />
+		)
 	}
 }
 const mapStateToProps = state => ({
