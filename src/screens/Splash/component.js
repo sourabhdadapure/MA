@@ -1,20 +1,16 @@
 import React from 'react'
 import styled from 'styled-components'
 
-const Wrapper = styled.View`
-  flex: 1;
-  justify-content: center;
-  align-items: center;
-`
+import { SearchBar } from '../../components'
 
-const SplashText = styled.Text`
-  font-size: 15;
+const Wrapper = styled.View`
+	flex: 1;
 `
 
 const SplashComponent = () => (
-  <Wrapper>
-    <SplashText>Splash Screen</SplashText>
-  </Wrapper>
+	<Wrapper>
+		<SearchBar placeholderText="Enter a stock symbol.." />
+	</Wrapper>
 )
 
 export default SplashComponent
