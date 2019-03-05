@@ -1,7 +1,7 @@
 import React from 'react'
 import { Provider } from 'react-redux'
 import { createAppContainer, createStackNavigator } from 'react-navigation'
-import { Splash, LogIn, Earnings } from './screens'
+import { Splash, Earnings } from './screens'
 
 import configureStore from './config/configureStore'
 
@@ -10,7 +10,6 @@ const store = configureStore()
 const AppStack = createStackNavigator(
 	{
 		Splash: { screen: Splash },
-		LogIn: { screen: LogIn },
 		Earnings: { screen: Earnings },
 	},
 	{

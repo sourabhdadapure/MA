@@ -13,7 +13,7 @@ class EarningsComponent extends React.Component {
 	render() {
 		const { symbol, earnings } = this.props
 
-		return (
+		return earnings ? (
 			<EarningsCard
 				symbol={symbol}
 				actualEPS={earnings.actualEPS}
@@ -27,7 +27,7 @@ class EarningsComponent extends React.Component {
 				yearAgo={earnings.yearAgo}
 				yearAgoChangePercent={earnings.yearAgoChangePercent}
 			/>
-		)
+		) : null
 	}
 }
 const mapStateToProps = state => ({
