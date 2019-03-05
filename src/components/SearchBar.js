@@ -13,17 +13,17 @@ const Wrapper = styled.View`
 	width: 90%;
 `
 
-const PriceText = styled.Text`
-	font-size: 25;
-`
-
 class Search extends React.Component {
 	static propTypes = {
+		getStockPrice: PropTypes.func.isRequired,
+		navigation: PropTypes.object.isRequired,
 		placeholderText: PropTypes.string,
+		stockPrice: PropTypes.number,
 	}
 
 	static defaultProps = {
 		placeholderText: 'Enter Text here',
+		stockPrice: 0,
 	}
 
 	constructor(props) {

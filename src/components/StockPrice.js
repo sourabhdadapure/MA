@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components/native'
 
 const Wrapper = styled.TouchableOpacity`
-	margin-top: 30;
+	margin-top: 50;
 	border-radius: 18;
 	background-color: rgba(34, 43, 84, 0.9);
 	margin-horizontal: 5%;
@@ -19,6 +19,7 @@ const TextWrapper = styled.View`
 `
 
 const StockPriceText = styled.Text`
+	text-align: center;
 	font-size: 20;
 	color: white;
 `
@@ -26,7 +27,11 @@ const StockPriceText = styled.Text`
 export default class StockPrice extends React.Component {
 	static propTypes = {
 		onPress: PropTypes.func.isRequired,
-		stockPrice: PropTypes.number.isRequired,
+		stockPrice: PropTypes.number,
+	}
+
+	static defaultProps = {
+		stockPrice: 0,
 	}
 
 	render() {

@@ -15,29 +15,34 @@ const Wrapper = styled.View`
 	padding-horizontal: 5%;
 `
 
-const EarningsText = styled.Text`
-	text-align: center;
-	font-size: 30;
-	height: 50;
-	color: white;
-`
-
-const EarningsSubText = styled.Text`
-	text-align: center;
-	font-size: 20;
-	height: 25;
-	color: white;
-`
-
 class EarningsComponent extends React.Component {
 	render() {
 		const { symbol } = this.props
-		const { actualEPS, consensusEPS } = this.props.earnings
+		const {
+			actualEPS,
+			consensusEPS,
+			announceTime,
+			numberOfEstimates,
+			EPSSurpriseDollar,
+			EPSReportDate,
+			fiscalPeriod,
+			fiscalEndDate,
+			yearAgo,
+			yearAgoChangePercent,
+		} = this.props.earnings
 		return (
 			<EarningsCard
 				symbol={symbol}
 				actualEPS={actualEPS}
 				consensusEPS={consensusEPS}
+				announceTime={announceTime}
+				numberOfEstimates={numberOfEstimates}
+				EPSSurpriseDollar={EPSSurpriseDollar}
+				EPSReportDate={EPSReportDate}
+				fiscalPeriod={fiscalPeriod}
+				fiscalEndDate={fiscalEndDate}
+				yearAgo={yearAgo}
+				yearAgoChangePercent={yearAgoChangePercent}
 			/>
 		)
 	}

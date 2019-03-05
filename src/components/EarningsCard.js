@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const Wrapper = styled.View`
@@ -26,6 +27,20 @@ const EarningsSubText = styled.Text`
 `
 
 export default class EarningsCard extends React.Component {
+	static propTypes = {
+		EPSReportDate: PropTypes.string.isRequired,
+		EPSSurpriseDollar: PropTypes.number.isRequired,
+		actualEPS: PropTypes.number.isRequired,
+		announceTime: PropTypes.string.isRequired,
+		consensusEPS: PropTypes.number.isRequired,
+		fiscalEndDate: PropTypes.string.isRequired,
+		fiscalPeriod: PropTypes.string.isRequired,
+		numberOfEstimates: PropTypes.number.isRequired,
+		symbol: PropTypes.string.isRequired,
+		yearAgo: PropTypes.number.isRequired,
+		yearAgoChangePercent: PropTypes.number.isRequired,
+	}
+
 	render() {
 		const {
 			actualEPS,
