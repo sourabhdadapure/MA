@@ -1,4 +1,4 @@
-# Mosaic Assignment
+# Stock Price
 
 
 <H2> Architectural choices </H2>
